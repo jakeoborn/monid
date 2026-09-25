@@ -120,8 +120,9 @@ Deno.test({
         assert("credits" in result.usage && "evidence" in result.usage);
         const out = result.output as Record<string, unknown>;
         assert(!("jsonrpc" in out), "envelope leaked");
-        assert(
-            typeof out.hours === "object" && out.hours !== null,
+        assertEquals(
+            typeof out.hours,
+            "string",
             JSON.stringify(out).slice(0, 300),
         );
     },
