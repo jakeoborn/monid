@@ -97,9 +97,22 @@ for `list-new-venues`).
 
 #### Scenario: The source's validation holds before the wire
 - **WHEN** `dimhour#search-venues` receives `limit: 26`, or
-  `dimhour#get-venue` receives no `city`, or any endpoint receives an
-  unknown field
+  `dimhour#get-venue` receives no `city`, or an endpoint that declares a
+  body schema receives an unknown field
 - **THEN** the run fails `INVALID_INPUT` and nothing is sent
+
+#### Scenario: The source's bounds themselves pass
+- **WHEN** an endpoint receives a value exactly at a source bound (`limit`
+  25 on `search-venues` or `find-places`, `limit` 100 or `days` 90 on
+  `list-new-venues`, `max_price` 4, `min_score` 100, or a `sort` inside the
+  enum)
+- **THEN** the input passes the gate
+
+#### Scenario: An endpoint with no input declares no body schema
+- **WHEN** `dimhour#list-cities`, whose live tool takes no input, receives
+  a body
+- **THEN** the body is not validated, and the request still carries
+  `params.arguments: {}`
 
 ### Requirement: No new authentication requirement
 Reads SHALL succeed with no credential configured. An OPTIONAL `apiKey`

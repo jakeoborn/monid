@@ -1,6 +1,6 @@
 {
     "name": "synthetic-text-fallback",
-    "description": "Synthetic, derived from get-hours-ok: the same answer with result.structuredContent REMOVED, so the payload exists only as JSON text in content[0].text. The connector parses the text and returns it as the output.",
+    "description": "Synthetic, derived from endpoints/get-hours/fixtures/happy.json: the same answer with result.structuredContent REMOVED, so the payload exists only as JSON text in content[0].text. The connector parses the text and returns it as the output.",
     "calls": [
         {
             "req": {

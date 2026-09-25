@@ -1,5 +1,5 @@
 {
-    "name": "fetch-ok",
+    "name": "happy",
     "description": "Live Dim Hour MCP answer, recorded 2026-09-24 and trimmed (arrays to 2, strings to 240 chars): fetch id=dallas:393: one venue in the OpenAI connector document shape. HTTP 200 carrying result.structuredContent plus the same payload as JSON in content[0].text. The connector returns structuredContent without the MCP envelope.",
     "calls": [
         {

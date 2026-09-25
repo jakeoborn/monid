@@ -38,9 +38,13 @@
 - [x] 4.2 Live error chains: `rpc-error`, `tool-error`, `http-error`
 - [x] 4.3 Synthetic chains: `synthetic-text-fallback`,
       `synthetic-text-malformed`, `synthetic-structured-preferred`
-- [x] 4.4 `provider.test.ts`: per endpoint happy, request envelope, both
-      in-body errors; fallback, malformed, structured-preferred, identity,
-      auth, schema gate, bulk safety, estimate; opt-in live smoke
+- [x] 4.4 `endpoints/<e>/endpoint.test.ts`, one per endpoint: happy,
+      request envelope, both in-body errors, schema gate (rejects plus
+      passing near-twins at each source bound, through the no-IO estimate),
+      opt-in live shape check; `list-cities` pins that a stray body never
+      reaches the wire
+- [x] 4.4a `provider.test.ts`, provider-wide only: HTTP 400, fallback,
+      malformed, structured-preferred, identity, auth, bulk-safety bounds
 - [x] 4.5 Mutation check: breaking the `isError` test, the unwrap, or the
       malformed-text rule each fails the suite
 

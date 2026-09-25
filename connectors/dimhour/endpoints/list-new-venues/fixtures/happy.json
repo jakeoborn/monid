@@ -1,5 +1,5 @@
 {
-    "name": "list-new-venues-ok",
+    "name": "happy",
     "description": "Live Dim Hour MCP answer, recorded 2026-09-24 and trimmed (arrays to 2, strings to 240 chars): list_new_venues city=dallas days=30 limit=2: recent additions with a receipt. HTTP 200 carrying result.structuredContent plus the same payload as JSON in content[0].text. The connector returns structuredContent without the MCP envelope.",
     "calls": [
         {
