@@ -10,9 +10,11 @@ An MCP server reports failure inside an HTTP 200: a top-level JSON-RPC
 from `httpStatus`, and no pure hook can change it. The provider therefore
 owns one `lifecycle.start` that makes the endpoint's own single request
 through `utils.request()` and only classifies the answer. A 2xx with no
-usable JSON (no `structuredContent` object, and no JSON object in
-`content[0].text`) settles as a 502 with `providerHttpStatus` kept, so the
-engine zero-bills it. `start` never returns RUNNING.
+usable JSON settles as a 502 with `providerHttpStatus` kept, so the
+engine zero-bills it. Usable means a non-null `structuredContent` object
+or array, or else `content[0].text` that parses to a non-null JSON object or
+array; arrays pass in both paths, by the same non-null object check.
+`start` never returns RUNNING.
 
 This is the hunterio `email-verifier` posture, applied provider-wide
 because every Dim Hour tool shares the envelope. Rejected: a new pure
