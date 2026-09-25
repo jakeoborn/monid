@@ -80,7 +80,8 @@ which would publish commercial traffic as permanently free.
 - No account, profile, write or operations tools (`save_venue`,
   `add_to_trip`, `list_my_trips`, `build_plan`, `check_availability`, …).
 - No engine, compiler, schema or hook change, and no Dim Hour special case
-  anywhere outside `connectors/dimhour`. No `design.md`.
+  anywhere outside `connectors/dimhour`. `design.md` records only the
+  choices the port was forced to make (D1-D3).
 - No new category leaf.
 - No bulk extraction: every limit is the source's own bound, nothing
   defaults a large page, and the tests never ask for more than 2 results.
